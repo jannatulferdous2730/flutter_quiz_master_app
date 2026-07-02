@@ -31,13 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        title: const Text('Quiz Master'),
-        actions: const [
-          ThemeToggleButton(),
-          SizedBox(width: 8),
-        ],
-      ),
+      appBar: AppBar(actions: const [ThemeToggleButton(), SizedBox(width: 8)]),
       body: isLoading
           ? const LoadingView(message: 'Loading dashboard…')
           : const SingleChildScrollView(

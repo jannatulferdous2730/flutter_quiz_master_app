@@ -5,6 +5,7 @@ import '../models/question_model.dart';
 import '../models/quiz_result_model.dart';
 import '../services/quiz_data_service.dart';
 import '../services/storage_service.dart';
+import '../utils/constants.dart';
 
 class QuizProvider extends ChangeNotifier {
   CategoryModel? _category;
@@ -49,14 +50,21 @@ class QuizProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
-      final qs = await QuizDataService.instance.getQuestionsByCategory(category.id);
+      var qs = await QuizDataService.instance.getQuestionsByCategory(category.id);
+      
+      final rng = Random();
+      qs.shuffle(rng);
+      if (qs.length > AppConstants.questionsPerQuiz) {
+        qs = qs.take(AppConstants.questionsPerQuiz).toList();
+      }
+
       _questions = qs;
       _answerCorrectness = List.filled(qs.length, null);
 
-      final rng = Random();
+      final range = Random();
       _shuffledOptionsPerQuestion = qs.map((q) {
         final opts = [q.correctAnswer, ...q.incorrectAnswers];
-        opts.shuffle(rng);
+        opts.shuffle(range);
         return opts;
       }).toList();
     } catch (_) {

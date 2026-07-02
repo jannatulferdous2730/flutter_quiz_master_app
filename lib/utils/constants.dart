@@ -16,4 +16,8 @@ class AppConstants {
 
   /// Maximum number of history entries to keep.
   static const int maxHistoryEntries = 10;
+
+  /// Number of questions presented per quiz session.
+  /// Change this value to adjust quiz length app-wide.
+  static const int questionsPerQuiz = 10;
 }
