@@ -103,17 +103,12 @@ static const int questionsPerQuiz = 10; // change this value
 
 ## Screenshots
 
-> _Add screenshots here after running the app_
-
-| Home (Light) | Home (Dark) | Quiz | Result |
-|---|---|---|---|
-| _(screenshot)_ | _(screenshot)_ | _(screenshot)_ | _(screenshot)_ |
-
----
+| Before Attempt | After Attempt |
+|---|---|
+| <img src="assets/screenshots/ss1.png" width="300"/> | <img src="assets/screenshots/ss2.png" width="300"/> |
 
 ## Demo Video
 
-> _Add your 3–5 min demo video link here (Google Drive / YouTube)_
-
+[![Watch Demo](https://img.youtube.com/vi/kxr_q2GvCmg/0.jpg)](https://youtu.be/kxr_q2GvCmg)
 ---
 
