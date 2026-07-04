@@ -105,7 +105,15 @@ static const int questionsPerQuiz = 10; // change this value
 
 | Before Attempt | After Attempt |
 |---|---|
-| <img src="assets/screenshots/ss1.png" width="300"/> | <img src="assets/screenshots/ss2.png" width="300"/> |
+| <img src="assets/screenshots/ss1.png" width="500"/> | <img src="assets/screenshots/ss2.png" width="500"/> |  
+
+<!-- | Before Attempt |
+|---|
+<img src="assets/screenshots/ss1.png" width="450"/>  |
+
+| After Attempt |
+|---|
+<img src="assets/screenshots/ss2.png" width="450"/>   -->
 
 ## Demo Video
 
