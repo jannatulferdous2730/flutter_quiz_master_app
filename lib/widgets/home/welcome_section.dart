@@ -33,7 +33,7 @@ class WelcomeSection extends StatelessWidget {
             Text(
               'Test your knowledge across categories',
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Colors.white.withOpacity(0.85),
+                    color: Colors.white.withValues(alpha: 0.85),
                   ),
             ),
           ],

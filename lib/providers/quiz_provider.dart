@@ -61,10 +61,9 @@ class QuizProvider extends ChangeNotifier {
       _questions = qs;
       _answerCorrectness = List.filled(qs.length, null);
 
-      final range = Random();
       _shuffledOptionsPerQuestion = qs.map((q) {
         final opts = [q.correctAnswer, ...q.incorrectAnswers];
-        opts.shuffle(range);
+        opts.shuffle(rng);
         return opts;
       }).toList();
     } catch (_) {

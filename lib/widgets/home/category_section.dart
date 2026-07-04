@@ -23,16 +23,32 @@ class CategorySection extends StatelessWidget {
           ),
         ),
         if (categories.isEmpty)
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
             child: Center(
-              child: Text('No categories available.'),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.category_outlined,
+                    size: 52,
+                    color: Theme.of(context).textTheme.bodyMedium?.color,
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    'No categories found.\nCheck your data files.',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ],
+              ),
             ),
           )
         else
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: GridView.builder(
+              padding: EdgeInsets.zero,
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: categories.length,
@@ -47,7 +63,7 @@ class CategorySection extends StatelessWidget {
                 return CategoryCard(
                   category: category,
                   questionCount: home.questionCountFor(category.id),
-                  onTap: () => context.push('/quiz', extra: category),
+                  onTap: () => context.go('/quiz', extra: category),
                 );
               },
             ),

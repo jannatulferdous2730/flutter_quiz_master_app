@@ -4,7 +4,7 @@ import '../../theme/app_colors.dart';
 class ResultMetricRow extends StatelessWidget {
   final int totalQuestions;
   final int correctAnswers;
-  
+
   const ResultMetricRow({
     super.key,
     required this.totalQuestions,
@@ -24,7 +24,7 @@ class ResultMetricRow extends StatelessWidget {
             color: isDark ? AppColors.darkCard : AppColors.lightCard,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: color.withOpacity(0.2),
+              color: color.withValues(alpha: 0.2),
               width: 1,
             ),
           ),

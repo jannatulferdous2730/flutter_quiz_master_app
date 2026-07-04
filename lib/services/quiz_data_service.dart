@@ -13,24 +13,34 @@ class QuizDataService {
   List<QuestionModel>? _questionsCache;
 
   /// Returns all categories (cached after first load).
+  /// Returns an empty list (not a crash) if the JSON is missing or malformed.
   Future<List<CategoryModel>> getCategories() async {
     if (_categoriesCache != null) return _categoriesCache!;
-    final String raw = await rootBundle.loadString('assets/data/categories.json');
-    final List<dynamic> list = json.decode(raw) as List<dynamic>;
-    _categoriesCache = list
-        .map((e) => CategoryModel.fromJson(e as Map<String, dynamic>))
-        .toList();
+    try {
+      final String raw = await rootBundle.loadString('assets/data/categories.json');
+      final List<dynamic> list = json.decode(raw) as List<dynamic>;
+      _categoriesCache = list
+          .map((e) => CategoryModel.fromJson(e as Map<String, dynamic>))
+          .toList();
+    } catch (_) {
+      _categoriesCache = [];
+    }
     return _categoriesCache!;
   }
 
   /// Returns all questions (cached after first load).
+  /// Returns an empty list (not a crash) if the JSON is missing or malformed.
   Future<List<QuestionModel>> _getAllQuestions() async {
     if (_questionsCache != null) return _questionsCache!;
-    final String raw = await rootBundle.loadString('assets/data/questions.json');
-    final List<dynamic> list = json.decode(raw) as List<dynamic>;
-    _questionsCache = list
-        .map((e) => QuestionModel.fromJson(e as Map<String, dynamic>))
-        .toList();
+    try {
+      final String raw = await rootBundle.loadString('assets/data/questions.json');
+      final List<dynamic> list = json.decode(raw) as List<dynamic>;
+      _questionsCache = list
+          .map((e) => QuestionModel.fromJson(e as Map<String, dynamic>))
+          .toList();
+    } catch (_) {
+      _questionsCache = [];
+    }
     return _questionsCache!;
   }
 

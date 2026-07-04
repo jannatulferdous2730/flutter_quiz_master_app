@@ -10,8 +10,7 @@ class ResultSummaryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
-    // Determine color based on score percentage
+
     Color scoreColor;
     if (result.percentage >= 80) {
       scoreColor = AppColors.success;
@@ -29,13 +28,13 @@ class ResultSummaryCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: scoreColor.withOpacity(0.15),
+            color: scoreColor.withValues(alpha: 0.15),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
         ],
         border: Border.all(
-          color: scoreColor.withOpacity(0.3),
+          color: scoreColor.withValues(alpha: 0.3),
           width: 2,
         ),
       ),
@@ -60,7 +59,7 @@ class ResultSummaryCard extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
-              color: scoreColor.withOpacity(0.15),
+              color: scoreColor.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Text(

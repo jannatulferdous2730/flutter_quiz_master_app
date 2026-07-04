@@ -20,7 +20,8 @@ class HistoryTile extends StatelessWidget {
 
     final date = result.dateTime;
     final formatted =
-        '${date.day.toString().padLeft(2, '0')}/${date.month.toString().padLeft(2, '0')}/${date.year}  ${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}';
+        '${date.day.toString().padLeft(2, '0')}/${date.month.toString().padLeft(2, '0')}/${date.year}  '
+        '${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}';
 
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
@@ -29,18 +30,17 @@ class HistoryTile extends StatelessWidget {
         color: isDark ? AppColors.darkCard : AppColors.lightCard,
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
-          color: color.withOpacity(0.25),
+          color: color.withValues(alpha: 0.25),
           width: 1,
         ),
       ),
       child: Row(
         children: [
-          // Score badge
           Container(
             width: 44,
             height: 44,
             decoration: BoxDecoration(
-              color: color.withOpacity(0.15),
+              color: color.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(
@@ -55,7 +55,6 @@ class HistoryTile extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 12),
-          // Category + date
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,11 +75,10 @@ class HistoryTile extends StatelessWidget {
               ],
             ),
           ),
-          // Percentage chip
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.15),
+              color: color.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(

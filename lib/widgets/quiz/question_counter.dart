@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../theme/app_colors.dart';
 
 class QuestionCounter extends StatelessWidget {
-  final int current; // 1-based for display
+  final int current;
   final int total;
 
   const QuestionCounter({
@@ -25,7 +25,7 @@ class QuestionCounter extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
           decoration: BoxDecoration(
-            color: AppColors.primary.withOpacity(0.12),
+            color: AppColors.primary.withValues(alpha: 0.12),
             borderRadius: BorderRadius.circular(20),
           ),
           child: Text(

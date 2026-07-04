@@ -24,14 +24,13 @@ class _CategoryCardState extends State<CategoryCard>
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
 
-  // Predefined color palettes per category id for visual variety.
   static const _colorMap = {
-    9: (Color(0xFF6C63FF), Color(0xFF9D97FF)),   // General: indigo
-    17: (Color(0xFF10B981), Color(0xFF6EE7B7)),   // Science & Nature: green
-    18: (Color(0xFF3B82F6), Color(0xFF93C5FD)),   // Computers: blue
-    21: (Color(0xFFFF6584), Color(0xFFFFA0B5)),   // Sports: coral
-    22: (Color(0xFFF59E0B), Color(0xFFFCD34D)),   // Geography: amber
-    23: (Color(0xFF8B5CF6), Color(0xFFC4B5FD)),   // History: purple
+    9: (Color(0xFF6C63FF), Color(0xFF9D97FF)),
+    17: (Color(0xFF10B981), Color(0xFF6EE7B7)),
+    18: (Color(0xFF3B82F6), Color(0xFF93C5FD)),
+    21: (Color(0xFFFF6584), Color(0xFFFFA0B5)),
+    22: (Color(0xFFF59E0B), Color(0xFFFCD34D)),
+    23: (Color(0xFF8B5CF6), Color(0xFFC4B5FD)),
   };
 
   (Color, Color) get _colors {
@@ -84,7 +83,7 @@ class _CategoryCardState extends State<CategoryCard>
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: base.withOpacity(0.35),
+                color: base.withValues(alpha: 0.35),
                 blurRadius: 16,
                 offset: const Offset(0, 6),
               ),
@@ -98,7 +97,7 @@ class _CategoryCardState extends State<CategoryCard>
                 width: 48,
                 height: 48,
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.25),
+                  color: Colors.white.withValues(alpha: 0.25),
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Icon(icon, color: Colors.white, size: 26),
@@ -117,9 +116,10 @@ class _CategoryCardState extends State<CategoryCard>
               ),
               const SizedBox(height: 6),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.25),
+                  color: Colors.white.withValues(alpha: 0.25),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(

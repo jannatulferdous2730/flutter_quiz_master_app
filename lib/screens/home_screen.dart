@@ -19,7 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    // Load after the first frame so context.read is safe.
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<HomeProvider>().loadDashboardData();
     });

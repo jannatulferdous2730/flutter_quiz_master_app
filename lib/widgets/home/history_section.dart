@@ -33,10 +33,22 @@ class HistorySection extends StatelessWidget {
         ),
         if (history.isEmpty)
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-            child: Text(
-              'No quizzes completed yet. Pick a category above!',
-              style: Theme.of(context).textTheme.bodyMedium,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.history_toggle_off_rounded,
+                  size: 28,
+                  color: Theme.of(context).textTheme.bodyMedium?.color,
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    'No quizzes completed yet. Pick a category above!',
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ),
+              ],
             ),
           )
         else

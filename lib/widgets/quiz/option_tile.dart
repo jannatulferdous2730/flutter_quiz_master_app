@@ -23,9 +23,10 @@ class OptionTile extends StatelessWidget {
 
     final borderColor = isSelected ? AppColors.primary : Colors.transparent;
     final bgColor = isSelected
-        ? AppColors.primary.withOpacity(0.12)
+        ? AppColors.primary.withValues(alpha: 0.12)
         : (isDark ? AppColors.darkCard : AppColors.lightCard);
-    final labelBg = isSelected ? AppColors.primary : AppColors.primary.withOpacity(0.12);
+    final labelBg =
+        isSelected ? AppColors.primary : AppColors.primary.withValues(alpha: 0.12);
     final labelColor = isSelected ? Colors.white : AppColors.primary;
 
     return GestureDetector(
@@ -45,23 +46,22 @@ class OptionTile extends StatelessWidget {
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: AppColors.primary.withOpacity(0.18),
+                    color: AppColors.primary.withValues(alpha: 0.18),
                     blurRadius: 10,
                     offset: const Offset(0, 4),
-                  )
+                  ),
                 ]
               : [
                   BoxShadow(
                     color: (isDark ? Colors.black : Colors.grey)
-                        .withOpacity(0.06),
+                        .withValues(alpha: 0.06),
                     blurRadius: 6,
                     offset: const Offset(0, 2),
-                  )
+                  ),
                 ],
         ),
         child: Row(
           children: [
-            // Letter badge
             AnimatedContainer(
               duration: const Duration(milliseconds: 200),
               width: 36,
@@ -86,7 +86,8 @@ class OptionTile extends StatelessWidget {
               child: Text(
                 option,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+                      fontWeight:
+                          isSelected ? FontWeight.w600 : FontWeight.w400,
                     ),
               ),
             ),

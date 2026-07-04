@@ -32,7 +32,7 @@ class AppTheme {
         cardTheme: CardThemeData(
           color: AppColors.lightCard,
           elevation: 2,
-          shadowColor: AppColors.primary.withOpacity(0.12),
+          shadowColor: AppColors.primary.withValues(alpha: 0.12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
@@ -69,7 +69,7 @@ class AppTheme {
           ),
         ),
         chipTheme: ChipThemeData(
-          backgroundColor: AppColors.primary.withOpacity(0.1),
+          backgroundColor: AppColors.primary.withValues(alpha: 0.1),
           labelStyle: const TextStyle(
             color: AppColors.primary,
             fontSize: 12,
@@ -216,7 +216,7 @@ class AppTheme {
           ),
         ),
         chipTheme: ChipThemeData(
-          backgroundColor: AppColors.primaryLight.withOpacity(0.15),
+          backgroundColor: AppColors.primaryLight.withValues(alpha: 0.15),
           labelStyle: const TextStyle(
             color: AppColors.primaryLight,
             fontSize: 12,
